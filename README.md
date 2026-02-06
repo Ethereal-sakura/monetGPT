@@ -24,6 +24,7 @@
 - [Image Processing CLI Usage](#-image-processing-cli-usage)
 - [Puzzle Types](#-puzzle-types)
 - [Configuration](#-configuration)
+- [Prompts Documentation](#-prompts-documentation)
 - [Results & Evaluation](#-results--evaluation)
 - [Troubleshooting](#-troubleshooting)
 - [Citation](#-citation)
@@ -323,6 +324,35 @@ processing:
 
 ### Benchmark Performance
 MonetGPT achieves state-of-the-art results on image retouching tasks while providing full explainability and maintaining original image resolution.
+
+## 📝 Prompts Documentation
+
+MonetGPT uses carefully designed prompts for model inference and training data generation. For a comprehensive guide to all prompts used in the codebase, see:
+
+**[📖 Detailed Prompts Documentation](docs/PROMPTS.md)** | **[📖 提示词文档](docs/PROMPTS.md)**
+
+This documentation covers:
+- **Inference prompts**: Two-stage analysis and JSON generation prompts for image editing
+- **Training prompts**: Puzzle-based prompts for teaching the model retouching operations
+- **Style instructions**: Balanced, vibrant, and retro editing styles
+- **Configuration**: How to customize prompts and parameters
+
+### Quick Overview
+
+MonetGPT uses a **two-stage prompting approach** for inference:
+
+1. **Stage 1 (Analysis)**: The model analyzes the image and creates a professional editing plan identifying visual issues and proposed adjustments
+2. **Stage 2 (JSON Generation)**: The model converts the editing plan into specific parameter values (ranging from -100 to +100)
+
+The model supports three editing styles:
+- **Balanced**: Natural, true-to-life edits
+- **Vibrant**: Bold, punchy colors for social media
+- **Retro**: Nostalgic, vintage aesthetic with muted tones
+
+For training, MonetGPT uses three types of puzzle prompts to teach operation awareness:
+- **Puzzle 1**: Single operation analysis and recognition
+- **Puzzle 2**: Multi-version comparison and parameter ranking
+- **Puzzle 3**: Comprehensive editing workflows with multiple operations
 
 ## 🔧 Troubleshooting
 
